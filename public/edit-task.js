@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const taskIDDOM = document.querySelector('.task-edit-id');
 const taskNameDOM = document.querySelector('.task-edit-name');
 const taskCompletedDOM = document.querySelector('.task-edit-completed');
@@ -51,13 +52,13 @@ editFormDOM.addEventListener('submit', async (e) => {
       taskCompletedDOM.checked = true;
     }
     formAlertDOM.style.display = 'block';
-    formAlertDOM.textContent = `success, edited task`;
+    formAlertDOM.textContent = 'success, edited task';
     formAlertDOM.classList.add('text-success');
   } catch (error) {
     console.error(error);
     taskNameDOM.value = tempName;
     formAlertDOM.style.display = 'block';
-    formAlertDOM.innerHTML = `error, please try again`;
+    formAlertDOM.innerHTML = 'error, please try again';
   }
   editBtnDOM.textContent = 'Edit';
   setTimeout(() => {
