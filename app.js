@@ -5,19 +5,17 @@ const connectDB = require('./db/connect');
 require('dotenv').config();
 
 const app = express();
+
+/*
+? Middleware
+*/
 app.use(express.static('./public'));
 app.use(express.json());
 
+/*
+? Routes
+*/
 app.use('/api/v1/tasks', tasks);
-
-// routes
-app.get('/', (req, res) => {
-  res.status(200).send('Task Manager Application');
-});
-
-app.all('*', (req, res) => {
-  res.status(404).json({ success: false, msg: 'Resource could not be found!' });
-});
 
 const port = 5000;
 
